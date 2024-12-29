@@ -13,12 +13,13 @@ const { detectFace } = require('./controllers/faceDetect');
 // Update connection to use environment variable for database URL
 const db = knex({
   client: 'pg',
-  connection: process.env.DATABASE_URL, // use DATABASE_URL from environment variable
-  ssl: {
-    rejectUnauthorized: false, // Necessary for Render deployment
+  connection: {
+    connectionString: process.env.DATABASE_URL, // Set this in your environment variables
+    ssl: {
+      rejectUnauthorized: false,
+    },
   },
 });
-
 const app = express();
 app.use(bodyParser.json());
 app.use(cors());
