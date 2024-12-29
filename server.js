@@ -11,7 +11,7 @@ const { detectFace } = require('./controllers/faceDetect');
 
 
 const db = knex({
-  client: 'pg',
+ // client: 'pg',
   connection: {
     host: 'dpg-ctopv0tsvqrc73bamdb0-a',
     port: 5432,
