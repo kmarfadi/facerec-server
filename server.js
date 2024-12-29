@@ -11,13 +11,12 @@ const { detectFace } = require('./controllers/faceDetect');
 
 
 const db = knex({
- // client: 'pg',
+   client: 'pg',
   connection: {
-    host: 'dpg-ctopv0tsvqrc73bamdb0-a',
-    port: 5432,
-    user: 'marf',
-    password: '1234',
-    database: 'facerecdb_u33o',
+    connectionString: process.env.DATABASE_URL,  // Use Render's DATABASE_URL environment variable
+    ssl: {
+      rejectUnauthorized: false,  // Disable SSL certificate verification for Render
+    },
   },
 });
 
