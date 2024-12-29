@@ -35,7 +35,7 @@ app.get('/profile/:id', handleProfile(db));
 ////////////////ENTRIES INCREMENTER////////////////////////////
 app.put('/image', handleImage(db));
 ////////////////SERVER LISTENER////////////////////////////
-app.listen(process.env.PORT || 3003, () => {
+app.listen(process.env.PORT, () => {
   console.log('Server running on port ');
 });
 
