@@ -3,7 +3,7 @@ const { ClarifaiStub, grpc } = require("clarifai-nodejs-grpc");
 
 const stub = ClarifaiStub.grpc();
 const metadata = new grpc.Metadata();
-metadata.set("authorization", "Key " + '1773941d953a4cbaa8aa1ff30bd960bf');
+metadata.set("authorization", "Key " +  process.env.CLARIFAI_API_KEY);
 
 // Function that will be called by the endpoint
 const detectFace = (req, res) => {
