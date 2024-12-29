@@ -3,7 +3,6 @@ const handleRegister = (db, bcrypt) => (req, res) => {
 
   // Input validation
   if (!email || !name || !password) {
-
     return res.status(400).json('All fields are required');
   }
 
@@ -31,7 +30,7 @@ const handleRegister = (db, bcrypt) => (req, res) => {
       .then(trx.commit)
       .catch(trx.rollback);
   })
-    .catch(err => res.status(400).json('Unable to register',  err));
+    .catch(err => res.status(400).json('Unable to register'));
 };
 
 module.exports = {
